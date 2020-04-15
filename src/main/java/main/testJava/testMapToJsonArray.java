@@ -4,12 +4,14 @@ import com.alibaba.fastjson.JSON;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
 public class testMapToJsonArray {
     public static void main(String[] args) throws IOException {
-        //json{"updated_at":1551780617,"attr":{"uptime_h":3,"uptime_m":17},"did":"GBBxjJYAxE4apkxwEzR3"}
+        /*//json{"updated_at":1551780617,"attr":{"uptime_h":3,"uptime_m":17},"did":"GBBxjJYAxE4apkxwEzR3"}
         String aaa = "{\"updated_at\":1551780617,\"attr\":{\"uptime_h\":3,\"uptime_m\":17},\"did\":\"GBBxjJYAxE4apkxwEzR3\"}";
 
         Map rMap = (Map) JSON.parse(aaa);
@@ -26,6 +28,14 @@ public class testMapToJsonArray {
         String str = rMap.get("attr").toString();
         System.out.println("ddd===" + str);
         Map map = (Map) JSON.parse(str);
-        System.out.println(map.get("uptime_h"));
+        System.out.println(map.get("uptime_h"));*/
+
+
+        //String contractTemplateVariableValue = null;
+        //System.out.println((Map) JSON.parse(contractTemplateVariableValue));
+
+        String aa = "[{[name]=年月日测试-年, [defaultWidth]=150, [defaultHeight]=30, [positionX]=0, [positionY]=0, [widgetType]=1}, {[name]=年月日测试-月, [defaultWidth]=150, [defaultHeight]=30, [positionX]=170, [positionY]=0, [widgetType]=1}, {[name]=年月日测试-日, [defaultWidth]=150, [defaultHeight]=30, [positionX]=340, [positionY]=0, [widgetType]=1}]";
+
+        System.out.println(JSON.parseObject(aa, HashMap.class));
     }
 }

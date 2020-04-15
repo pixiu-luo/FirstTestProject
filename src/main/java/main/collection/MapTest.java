@@ -16,6 +16,8 @@ public class MapTest {
         map.put(null,"aa");
         map.put("key","aa");
 
-        System.out.println(map);
+        System.out.println(map.toString());
+        System.out.println(map.hashCode());
+
     }
 }

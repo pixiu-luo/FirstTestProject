@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.reducing;
 import static java.util.stream.Collectors.toMap;
 
 public class test18Stream {
@@ -18,7 +19,7 @@ public class test18Stream {
         // 创建学生List
         List<Student> list = createStudentList();
 
-        // 1.获取value为Student对象，key为学生ID的Map
+        /*// 1.获取value为Student对象，key为学生ID的Map
         getStudentObjectMap(list);
 
         // 2.获取value为学生姓名，key为学生ID的Map
@@ -53,10 +54,22 @@ public class test18Stream {
         listStr.forEach(studentStr -> {
 
             listStu.add(JSON.parseObject(studentStr, Student.class));
+            System.out.println("kankan youjici " + studentStr);
+            return;
+
+        });*/
+
+        list.forEach(studentStr -> {
+
+            System.out.println("kankan youjici " + studentStr.toString());
+            if (studentStr == null) {
+                return;
+            }
+            System.out.println("1111");
 
         });
 
-        //List根据某个字段过滤、排序
+        /*//List根据某个字段过滤、排序
         listStu.stream()
                 .filter(student -> student.getSex().equals("女"))
                 .sorted(Comparator.comparing(Student::getName))
@@ -66,7 +79,7 @@ public class test18Stream {
         Map<String, List<Student>> sexGroupMap = listStu.stream()
                 .collect(Collectors.groupingBy(Student::getSex));
         //如果Map中多个名称相同，则studentId用逗号间隔
-        Map<String, String> studentNameIdMap = listStu.stream().collect(toMap(Student::getName, Student::getStuId, (s, a) -> s + "," + a));
+        Map<String, String> studentNameIdMap = listStu.stream().collect(toMap(Student::getName, Student::getStuId, (s, a) -> s + "," + a));*/
 
 
     }
