@@ -12,7 +12,7 @@ public class test23jsonToMap {
         //List<Map> maps = JSON.parseArray(aa, Map.class);
         //Object parse = JSON.parse(aa);
         //System.out.println(parse);
-        Map<String, String> map = JSON.parseObject(aa, Map.class);
+        Map<String, String> map = JSON.parseObject(aa, HashMap.class);
         System.out.println(map);
 
 
